@@ -16,7 +16,6 @@ function App() {
   useEffect(() => {
     const request = '/restaurants?id=' + selectedRestaurant
     fetch(request).then(res => res.json()).then(data => {
-      console.log(data)
       setDetails(data.restaurants);
     });
   }, [selectedRestaurant]);
@@ -25,10 +24,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="row">
-          <div>
+          <div className="names">
             <List list={ restaurants } onClick={setSelectedRestaurant} title="Restaurants"/>
           </div>
-          <div>
+          <div className="details">
             <List list={ details } title="Details"/>
           </div>
         </div>

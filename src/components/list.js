@@ -1,11 +1,10 @@
 import React from 'react'
 import "../styles/list.css"
 
-export const Names = ({ item, index, onClick }) => {  
+export const Names = ({ item, onClick }) => {  
   return(
     <div 
       className="restaurantNames"
-      key={ index } 
       onClick={ () => onClick(item.id)}
     >
       { item.name } 
@@ -13,11 +12,10 @@ export const Names = ({ item, index, onClick }) => {
   )
 }
 
-export const Details = ({ item, index }) => {    
+export const Details = ({ item }) => {    
     return(
       <div 
         className="details"
-        key={ index } 
       >
         <div className="detailItem">{ item.playlist && `Playlist: ${item.playlist}` }</div>
         <div className="detailItem">{ item.lighting && `Lighting: ${item.lighting}` } </div>
@@ -32,11 +30,11 @@ export const List = ({ list, onClick, title }) => {
     <div className="list">
       <div className="title">{ title }</div>
       <div className="scroll">
-        { title == "Restaurants" &&
-            list.map((item, index) => <Names item={item} index={index} onClick={onClick} />) 
+        { title === "Restaurants" &&
+            list.map((item, index) => <Names item={item} key={item.id} onClick={onClick} />) 
         }
-        { title == "Details" &&
-            list.map((item, index) => <Details item={item} index={index}/>) 
+        { title === "Details" &&
+            list.map((item, index) => <Details item={item} key={item.id}/>) 
         }
       </div>
     </div>
