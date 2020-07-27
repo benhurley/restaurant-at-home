@@ -1,3 +1,19 @@
+# Are you missing indoor dining as much as I am?
+In the wake of Covid-19, delivery and takeout food orders have replaced indoor dining in many parts of the US. A major component as to why a customer chooses a particular restaurant is the <i>experience</i>, where the actual meal may only play a minor role. Popular delivery and takeout apps are missing a crucial component to the dining experience, which is the atmosphere while you are eating.
+
+This project is a POC to help recreate (as much as possible) the vibe at some of your favorite restaurants while we wait for indoor dining to return. With data such as how to set your table, lighting, music, etc. you can get closer than ever before. If nothing else, it serves as an idea for date-night or a family meal.
+
+There are two ways we can begin aggregating restaurant data:
+
+1. Web-scraping positive online reviews
+2. Allowing the restaurant to submit a form so customers can recreate the experience at home
+
+To start, a wireframe with dummy-data has been created as we work through how the UI should look.
+
+If you would like to contribute to the project, please reach out to me at benfromtech@gmail.com
+
+-----------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
