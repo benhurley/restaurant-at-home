@@ -8,13 +8,30 @@ function App() {
   const [details, setDetails] = useState([]);
 
   useEffect(() => {
-    fetch('/restaurants').then(res => res.json()).then(data => {
+    const request = '/restaurants' + window.location.search
+    fetch(request).then(res => res.json()).then(data => {
       setRestaurants(data.restaurants);
     });
   }, []);
 
   useEffect(() => {
+    let newURL
     const request = '/restaurants?id=' + selectedRestaurant
+
+    // update the url showing the selected restaurant id
+    if (selectedRestaurant) {
+      if (window.location.search) {
+        if (window.location.search.includes('id')){
+         newURL = window.location.href.replace(/(id=)[^\&]+/, '$1' + selectedRestaurant)
+        } else {
+         newURL = window.location.href + `&id=${selectedRestaurant}`
+        }
+      } else {
+       newURL = window.location.href + `?id=${selectedRestaurant}`
+      }
+      window.history.replaceState({}, null, newURL);    
+    }
+
     fetch(request).then(res => res.json()).then(data => {
       setDetails(data.restaurants);
     });
