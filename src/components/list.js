@@ -1,24 +1,43 @@
 import React from 'react'
 import "../styles/list.css"
 
-export const Item = ({ restaurant, index, onClick }) => {
+export const Names = ({ item, index, onClick }) => {  
   return(
     <div 
-      class="listItem"
+      className="restaurantNames"
       key={ index } 
-      onClick={ () => onClick(restaurant.id)}
+      onClick={ () => onClick(item.id)}
     >
-      { restaurant.name }
+      { item.name } 
     </div>
   )
 }
 
-export const List = ({ restaurants, onClick }) => {
+export const Details = ({ item, index }) => {    
+    return(
+      <div 
+        className="details"
+        key={ index } 
+      >
+        <div className="detailItem">{ item.playlist && `Playlist: ${item.playlist}` }</div>
+        <div className="detailItem">{ item.lighting && `Lighting: ${item.lighting}` } </div>
+        <div className="detailItem">{ item.scent && `Scent: ${item.scent}` } </div>
+        <div className="detailItem">{ item.tableItems.length > 0 && `Tabletop Items: ${item.tableItems}` } </div>
+      </div>
+    )
+}
+
+export const List = ({ list, onClick, title }) => {
   return (
-    <div class="list">
-      <div class="title">restaurant names</div>
-      <div class="scoll">
-        { restaurants.map((restaurant, index) => <Item restaurant={restaurant} index={index} onClick={onClick} />) }
+    <div className="list">
+      <div className="title">{ title }</div>
+      <div className="scroll">
+        { title == "Restaurants" &&
+            list.map((item, index) => <Names item={item} index={index} onClick={onClick} />) 
+        }
+        { title == "Details" &&
+            list.map((item, index) => <Details item={item} index={index}/>) 
+        }
       </div>
     </div>
   )
