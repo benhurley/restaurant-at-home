@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { List } from './components/list';
+import { updateUrl } from './helpers/app_helper';
 
 function App() {
   const [restaurants, setRestaurants] = useState([]);
@@ -15,23 +16,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    let newURL
     const request = '/restaurants?id=' + selectedRestaurant
-
-    // update the url showing the selected restaurant id
-    if (selectedRestaurant) {
-      if (window.location.search) {
-        if (window.location.search.includes('id')){
-         newURL = window.location.href.replace(/(id=)[^\&]+/, '$1' + selectedRestaurant)
-        } else {
-         newURL = window.location.href + `&id=${selectedRestaurant}`
-        }
-      } else {
-       newURL = window.location.href + `?id=${selectedRestaurant}`
-      }
-      window.history.replaceState({}, null, newURL);    
-    }
-
+    updateUrl(selectedRestaurant)
     fetch(request).then(res => res.json()).then(data => {
       setDetails(data.restaurants);
     });
