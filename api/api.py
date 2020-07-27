@@ -4,7 +4,7 @@ from test_data.restaurant_data import RESTAURANTS
 
 app = Flask(__name__)
 
-@app.route('/restaurants')
+@app.route('/api/restaurants')
 def get_restaurants():
     results = []
 
