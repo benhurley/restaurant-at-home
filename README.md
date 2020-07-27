@@ -10,7 +10,62 @@ There are two ways we can begin aggregating restaurant data:
 
 To start, a wireframe with dummy-data has been created as we work through how the UI should look.
 
+## Contact
+
 If you would like to contribute to the project, please reach out to me at benfromtech@gmail.com
+
+## Requirements
+
+1. Node.js (10.13.0^)
+2. Yarn
+3. Python3
+
+## Quick Start
+
+Install dependencies
+
+```bash
+yarn install
+```
+
+Setup the back end
+
+```bash
+cd api/
+```
+
+```bash
+python3 -m venv venv
+```
+
+```bash
+. venv/bin/activate
+```
+
+```bash
+pip install flask
+```
+
+```bash
+pip install python-dotenv
+```
+
+
+```bash
+cd ..
+```
+
+Start the backend
+
+```bash
+yarn start-api
+```
+
+Start the frontend
+
+```bash
+yarn start
+```
 
 -----------------------
 
