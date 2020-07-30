@@ -13,14 +13,14 @@ RESTAURANTS = [
         "playlist": "Top 50 USA",
         "lighting": "60%",
         "scent": "palo santo sticks",
-        "tableItems": [ "chop sticks," "paper napkins", "cayenne", "sake" ],
+        "tableItems": [ "chop sticks", "paper napkins", "cayenne", "sake" ],
     },
     {
         "id": 3,
         "name": "49 Club Steakhouse",
         "playlist": "Frank Sinatra",
         "lighting": "50%",
-        "tableItems": [ "silverware," "steak sauce", "salt", "pepper", "wine bottle holder", "toothpicks" ],
+        "tableItems": [ "silverware", "steak sauce", "salt", "pepper", "wine bottle holder", "toothpicks" ],
     },
     {
         "id": 4,
