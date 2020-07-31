@@ -1,11 +1,11 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, render_template
 from restaurant_data import RESTAURANTS
 
 app = Flask(__name__)
 
 @app.route('/')
 def root():
-    return send_file('/build/index.html')
+    return render_template('index.html')
 
 @app.route('/api/restaurants')
 def get_restaurants():
