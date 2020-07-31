@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from restaurant_data import RESTAURANTS
 
-app = Flask(__name__, static_folder="build/static", template_folder="build")
+app = Flask(__name__, static_folder="../build/static", template_folder="../build")
 
 @app.route('/')
 def root():
