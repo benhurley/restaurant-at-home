@@ -31,3 +31,6 @@ def get_restaurants():
             results.append(n)
     
     return {'restaurants': results}
+
+if __name__ == '__main__':
+    app.run()
