@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, send_from_directory
 from restaurant_data import RESTAURANTS
 
-app = Flask(__name__, static_folder='restaurant-at-home/build')
+app = Flask(__name__, static_folder='../build')
 
 # Serve React App
 @app.route('/', defaults={'path': ''})
