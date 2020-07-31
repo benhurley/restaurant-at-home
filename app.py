@@ -1,11 +1,17 @@
-from flask import Flask, request
+import os
+from flask import Flask, request, send_from_directory
 from restaurant_data import RESTAURANTS
 
 app = Flask(__name__, static_folder='./build', static_url_path="/")
 
-@app.route('/')
-def root():
-    return app.send_static_file('index.html')
+# Serve React App
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(app.static_folder + '/' + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/api/restaurants')
 def get_restaurants():
