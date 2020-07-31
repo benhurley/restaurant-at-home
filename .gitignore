@@ -14,7 +14,6 @@
 # python
 venv
 __pycache__
-.flaskenv
 
 # misc
 .DS_Store
