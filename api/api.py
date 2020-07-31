@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import request
+from flask import request, os
 from test_data.restaurant_data import RESTAURANTS
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
