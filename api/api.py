@@ -1,5 +1,5 @@
-from flask import Flask
-from flask import request, os
+import os
+from flask import Flask, request
 from test_data.restaurant_data import RESTAURANTS
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
@@ -23,5 +23,3 @@ def get_restaurants():
     
     return {'restaurants': results}
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
