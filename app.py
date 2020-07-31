@@ -1,4 +1,3 @@
-import os
 from flask import Flask, request
 from restaurant_data import RESTAURANTS
 
