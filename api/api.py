@@ -1,4 +1,5 @@
 import json
+from bson.json_util import dumps
 from bson import ObjectId
 from flask import Flask, request, jsonify
 from test_data.restaurant_data import RESTAURANTS
@@ -39,7 +40,6 @@ def add_restaurants():
         })
     print(jsonify(to_insert))
     new_ids = restaurants.insert_many(to_insert)
-    # restaurants.delete_many(new_ids)
     return JSONEncoder().encode(new_ids)
     
 
