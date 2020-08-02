@@ -5,9 +5,13 @@ from flask import Flask, request, jsonify
 from test_data.restaurant_data import RESTAURANTS
 from flask_pymongo import PyMongo
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../build', static_url_path='/')
 app.config["MONGO_URI"] = "mongodb+srv://restaurantathome:omgpassword@cluster0.536qw.mongodb.net/restaurantathome?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE"
 mongo = PyMongo(app)
+
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
 
 # Custom encoder for MongoDB (ObjectId class isn't serializable)
 class JSONEncoder(json.JSONEncoder):
