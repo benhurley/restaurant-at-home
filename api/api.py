@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request
-from restaurant_data import RESTAURANTS
+from test_data.restaurant_data import RESTAURANTS
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
 
